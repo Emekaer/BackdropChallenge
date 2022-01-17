@@ -20,8 +20,11 @@ module.exports = {
           screens: './src/screens',
           utils: './src/utils',
           components: './src/components',
+          reducer: './src/reducer',
+          services: './src/services',
         },
       },
     ],
+    ['module:react-native-dotenv', {moduleName: 'react-native-dotenv'}],
   ],
 };

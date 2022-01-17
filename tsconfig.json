@@ -15,7 +15,9 @@
       "navigation/*": ["./src/navigation/*"],
       "components/*": ["./src/components/*"],
       "assets/*": ["./src/assets/*"],
-      "utils/*": ["./src/utils/*"]
+      "utils/*": ["./src/utils/*"],
+      "reducer/*": ["./src/reducer/*"],
+      "services/*": ["./src/services/*"]
     }
   },
   "exclude": [
