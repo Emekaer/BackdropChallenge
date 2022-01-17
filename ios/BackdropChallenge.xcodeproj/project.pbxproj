@@ -12,10 +12,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		263AF5AB2794ECDE006929ED /* SFPRODISPLAYREGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 263AF5A22794ECDE006929ED /* SFPRODISPLAYREGULAR.OTF */; };
 		27B4B7628531B254DC08BB22 /* libPods-BackdropChallenge-BackdropChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAEC032C080A132C4D76FCD /* libPods-BackdropChallenge-BackdropChallengeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		1A30F0A7FA7B4FACB3441091 /* SFPRODISPLAYREGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = C070AF034233495EBD6554FA /* SFPRODISPLAYREGULAR.OTF */; };
+		A41FFF9119BA4DB68664A9A2 /* SFProDisplay-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 287B04A0752C4555A1D4FBDB /* SFProDisplay-Regular.OTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,13 +48,14 @@
 		263AF5A62794ECDE006929ED /* SFPRODISPLAYLIGHTITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFPRODISPLAYLIGHTITALIC.OTF; path = "../src/assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYLIGHTITALIC.OTF"; sourceTree = "<group>"; };
 		263AF5A72794ECDE006929ED /* SFPRODISPLAYMEDIUM.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFPRODISPLAYMEDIUM.OTF; path = "../src/assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYMEDIUM.OTF"; sourceTree = "<group>"; };
 		263AF5A82794ECDE006929ED /* SFPRODISPLAYSEMIBOLDITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = SFPRODISPLAYSEMIBOLDITALIC.OTF; path = "../src/assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYSEMIBOLDITALIC.OTF"; sourceTree = "<group>"; };
+		287B04A0752C4555A1D4FBDB /* SFProDisplay-Regular.OTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProDisplay-Regular.OTF"; path = "../src/assets/fonts/SFProDisplay-Regular.OTF"; sourceTree = "<group>"; };
 		2EAEC032C080A132C4D76FCD /* libPods-BackdropChallenge-BackdropChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackdropChallenge-BackdropChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BackdropChallenge/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E6F13F0B7C69FB85E1AADE6 /* libPods-BackdropChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BackdropChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4C78601E9D1CA9F5631B53 /* Pods-BackdropChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackdropChallenge.debug.xcconfig"; path = "Target Support Files/Pods-BackdropChallenge/Pods-BackdropChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		C070AF034233495EBD6554FA /* SFPRODISPLAYREGULAR.OTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SFPRODISPLAYREGULAR.OTF; path = ../src/assets/fonts/SFPRODISPLAYREGULAR.OTF; sourceTree = "<group>"; };
 		C2B843977A0B159D74B9A2AE /* Pods-BackdropChallenge-BackdropChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackdropChallenge-BackdropChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-BackdropChallenge-BackdropChallengeTests/Pods-BackdropChallenge-BackdropChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		C070AF034233495EBD6554FA /* SFPRODISPLAYREGULAR.OTF */ = {isa = PBXFileReference; name = "SFPRODISPLAYREGULAR.OTF"; path = "../src/assets/fonts/SFPRODISPLAYREGULAR.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +106,15 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = BackdropChallenge;
+			sourceTree = "<group>";
+		};
+		204851AA25EF47D48EF9F41E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C070AF034233495EBD6554FA /* SFPRODISPLAYREGULAR.OTF */,
+				287B04A0752C4555A1D4FBDB /* SFProDisplay-Regular.OTF */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -169,15 +178,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		204851AA25EF47D48EF9F41E /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				C070AF034233495EBD6554FA /* SFPRODISPLAYREGULAR.OTF */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -273,10 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263AF5AB2794ECDE006929ED /* SFPRODISPLAYREGULAR.OTF in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				1A30F0A7FA7B4FACB3441091 /* SFPRODISPLAYREGULAR.OTF in Resources */,
+				A41FFF9119BA4DB68664A9A2 /* SFProDisplay-Regular.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9JF9Z2FF28;
 				INFOPLIST_FILE = BackdropChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

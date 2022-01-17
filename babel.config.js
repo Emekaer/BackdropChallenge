@@ -18,7 +18,7 @@ module.exports = {
           assets: './src/assets',
           navigation: './src/navigation',
           screens: './src/screens',
-          util: './src/util',
+          utils: './src/utils',
           components: './src/components',
         },
       },
