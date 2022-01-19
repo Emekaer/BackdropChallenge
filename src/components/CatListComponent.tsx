@@ -20,9 +20,9 @@ const CatListComponent = ({ item: { url, id, } }: CatListComponentProps) => (
                 style={styles.image}
                 source={{
                     uri: url,
-                    priority: FastImage.priority.normal,
+                    priority: FastImage.priority.high,
                 }}
-                resizeMode={FastImage.resizeMode.contain}
+                resizeMode={FastImage.resizeMode.cover}
             />
             <Text style={styles.name}>{id}</Text>
         </View>
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
         width: "100%",
         justifyContent: "space-between",
         alignItems: "center",
-        flexDirection: "row"
+        flexDirection: "row",
+        marginBottom: 20
     },
     image: {
         width: 40,

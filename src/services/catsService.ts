@@ -8,12 +8,12 @@ export const catApi = createApi({
   reducerPath: 'catApi',
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
-    headers: {'x-api-key': CATS_API_KEY},
+    headers: {apiKey: CATS_API_KEY},
   }),
   endpoints: builder => ({
     getCatsByPage: builder.query<Cat, number>({
       query: page =>
-        `search?limit=20&page=${page}&order=DESC&api_key=961c8e53-3025-4d53-8708-064c33fee863`,
+        `search?limit=20&page=${page}&order=DESC`,
     }),
   }),
 });
