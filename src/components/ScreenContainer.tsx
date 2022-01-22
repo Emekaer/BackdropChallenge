@@ -1,11 +1,20 @@
-import React, { FC } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import React, { FC, ReactNode } from 'react';
+import { View, StyleSheet, Dimensions, ActivityIndicator, Text } from 'react-native';
 
 import colors from 'utils/colors';
 
 const { width } = Dimensions.get("screen")
 
-const ScreenContainer: FC = React.memo(({ children }) => {
+interface ScreenContainer {
+    children: ReactNode;
+    loading: boolean;
+    error: string;
+}
+
+const ScreenContainer = React.memo(({ children, loading, error }: ScreenContainer) => {
+    if (loading) return <View style={styles.central}><ActivityIndicator /></View>
+    if (error) return <View style={styles.central}><Text>An error Occured. Please reach out to customer support.</Text></View>
+
     return (
         <View style={styles.container}>
             {children}
@@ -22,5 +31,10 @@ const styles = StyleSheet.create({
         height: "100%",
         paddingHorizontal: width * 0.07,
         backgroundColor: colors.white
+    },
+    central: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
     }
 })

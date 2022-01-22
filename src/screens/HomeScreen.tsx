@@ -22,6 +22,7 @@ const Home = () => {
                 data={data}
                 renderItem={renderItem}
                 keyExtractor={keyExtractor}
+                showsVerticalScrollIndicator={false}
             />
         </ScreenContainer>
     );
