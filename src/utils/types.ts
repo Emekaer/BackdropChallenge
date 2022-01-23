@@ -1,15 +1,15 @@
-export interface SVGComponent {
+export type SVGComponent = {
   fill: string;
   outline?: string;
   height: string | number;
   width: string | number;
-}
+};
 
-export interface Cat {
-  breeds: {}[];
-  categories: {}[];
+export type Cat = {
+  breeds?: {}[];
+  categories?: {}[];
   id: string;
   url: string;
-  height: number;
-  width: number;
-}
+  height?: number;
+  width?: number;
+};

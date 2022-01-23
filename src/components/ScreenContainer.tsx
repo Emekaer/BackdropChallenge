@@ -1,14 +1,16 @@
 import React, { FC, ReactNode } from 'react';
 import { View, StyleSheet, Dimensions, ActivityIndicator, Text } from 'react-native';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
+import { SerializedError } from '@reduxjs/toolkit';
 
 import colors from 'utils/colors';
 
 const { width } = Dimensions.get("screen")
 
-interface ScreenContainer {
+type ScreenContainer = {
     children: ReactNode;
-    loading: boolean;
-    error: string;
+    loading?: boolean;
+    error?: FetchBaseQueryError | SerializedError | undefined;
 }
 
 const ScreenContainer = React.memo(({ children, loading, error }: ScreenContainer) => {

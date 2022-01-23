@@ -7,7 +7,6 @@ import ScreenContainer from 'components/ScreenContainer';
 import { useGetCatsByPageQuery } from 'services/catsService';
 
 const Home = () => {
-
     const { data, error, isLoading } = useGetCatsByPageQuery(0)
 
     const keyExtractor = useCallback((item) => item.id.toString()
@@ -17,7 +16,7 @@ const Home = () => {
         , [])
 
     return (
-        <ScreenContainer >
+        <ScreenContainer error={error} loading={isLoading}>
             <FlatList
                 data={data}
                 renderItem={renderItem}
