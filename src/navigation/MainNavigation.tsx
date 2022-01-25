@@ -50,6 +50,7 @@ export const MyTabs = () => {
             All Cats
           </Text>
         ),
+        title: "All Cats"
       }} />
       <Tab.Screen name="Favourite" component={FavouriteScreen}
         options={{
@@ -66,6 +67,7 @@ export const MyTabs = () => {
               Cats I Like
             </Text>
           ),
+          title: "Cats I Like"
         }}
       />
     </Tab.Navigator>

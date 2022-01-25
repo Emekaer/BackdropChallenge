@@ -7,26 +7,18 @@ import colors from 'utils/colors';
 import HeartIcon from 'assets/images/HeartIcon';
 import { RFValue } from "react-native-responsive-fontsize";
 
-import { useAppDispatch } from "reducer/hooks"
-import { removeFavourite } from "reducer/catsReducer"
-
-
 const { width } = Dimensions.get("screen")
 
 type LikedCatComponentProps = {
-    item: {
-        url: string;
-        id: string;
-    }
+    url: string;
+    id: string;
+    removeFavouriteCat: (id: string) => void;
 }
 
-const CatListComponent = React.memo<LikedCatComponentProps>(({ item: { url, id } }) => {
+const CatListComponent = React.memo<LikedCatComponentProps>(({ url, id, removeFavouriteCat }) => {
 
-    const dispatch = useAppDispatch()
 
-    const removeFavouriteCat = useCallback(() => {
-        dispatch(removeFavourite(id))
-    }, [])
+    console.log("render", new Date().toString(), "like")
 
     return (
         <View style={styles.container}>
@@ -35,12 +27,13 @@ const CatListComponent = React.memo<LikedCatComponentProps>(({ item: { url, id }
                 source={{
                     uri: url,
                     priority: FastImage.priority.high,
+                    cache: FastImage.cacheControl.cacheOnly
                 }}
                 resizeMode={FastImage.resizeMode.cover}
             />
             <View style={styles.nameAndLike}>
                 <Text style={styles.name}>{id}</Text>
-                <Pressable onPress={removeFavouriteCat}>
+                <Pressable onPress={() => removeFavouriteCat(id)}>
                     <HeartIcon fill={colors.red} width={16} height={13} outline={colors.grey} />
                 </Pressable>
             </View>
@@ -59,7 +52,8 @@ const styles = StyleSheet.create({
     image: {
         width: width * 0.4,
         aspectRatio: 1,
-        borderRadius: 10
+        borderRadius: 10,
+        backgroundColor: colors.grey
     },
     nameAndLike: {
         flexDirection: 'row',

@@ -7,15 +7,26 @@ import ScreenContainer from 'components/ScreenContainer';
 import { useAppSelector, useAppDispatch } from "reducer/hooks"
 import { removeFavourite } from "reducer/catsReducer"
 
+
 const Favourite = () => {
     const favourites = useAppSelector(state => state.cats.favourites)
+
+    const dispatch = useAppDispatch()
+
+    const removeFavouriteCat = useCallback((id) => {
+        dispatch(removeFavourite(id))
+    }, [])
 
     const keyExtractor = useCallback((item) => item.id.toString()
         , [])
 
-    const renderItem = useCallback(({ item }) => <LikedCatComponent item={item} />
-        , [])
+    const renderItem = useCallback(({ item }) => {
+        const { id, url } = item
 
+        return (<LikedCatComponent url={url} id={id} removeFavouriteCat={removeFavouriteCat} />)
+    }
+        , [])
+    console.log("render faves")
     return (
         <ScreenContainer>
             <FlatList
@@ -24,6 +35,7 @@ const Favourite = () => {
                 renderItem={renderItem}
                 keyExtractor={keyExtractor}
                 numColumns={2}
+                showsVerticalScrollIndicator={false}
             />
         </ScreenContainer>
     );

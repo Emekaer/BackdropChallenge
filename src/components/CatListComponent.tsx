@@ -1,30 +1,23 @@
 
-import React, { useCallback } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Pressable, Dimensions } from 'react-native';
 import FastImage from 'react-native-fast-image'
 
-import HeartIcon from 'assets/images/HeartIcon';
 import colors from 'utils/colors';
+import HeartIcon from 'assets/images/HeartIcon';
 
-import { useAppDispatch } from "reducer/hooks"
-import { addFavourite, } from "reducer/catsReducer"
+const { width } = Dimensions.get("screen")
 
 type CatListComponentProps = {
-    item: {
-        url: string;
-        id: string;
-    };
+    url: string;
+    id: string;
+    colorFill: string;
+    addFavouriteCat: (id: string, url: string) => void
 }
 
-const CatListComponent = React.memo<CatListComponentProps>(({ item }) => {
-    const { url, id, } = item
+const CatListComponent = React.memo<CatListComponentProps>(({ url, id, colorFill, addFavouriteCat }) => {
 
-    const dispatch = useAppDispatch();
-
-    const addFavouriteCat = useCallback(() => {
-        dispatch(addFavourite(item))
-    }, [])
-
+    console.log("render", id, new Date().toString(), "home", colorFill)
     return (
         <View style={styles.rowContainer}>
             <View style={styles.imageAndName}>
@@ -38,8 +31,8 @@ const CatListComponent = React.memo<CatListComponentProps>(({ item }) => {
                 />
                 <Text style={styles.name}>{id}</Text>
             </View>
-            <Pressable onPress={addFavouriteCat}>
-                <HeartIcon fill={colors.white} width={16} height={13} outline={colors.grey} />
+            <Pressable onPress={() => addFavouriteCat(url, id)}>
+                <HeartIcon fill={colorFill} width={16} height={13} outline={colors.grey} />
             </Pressable>
         </View>
     )
@@ -56,10 +49,11 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     image: {
-        width: 40,
-        height: 40,
+        width: width * 0.13,
+        aspectRatio: 1,
         marginRight: 15,
-        borderRadius: 10
+        borderRadius: 10,
+        backgroundColor: colors.grey
     },
     imageAndName: {
         flexDirection: 'row',

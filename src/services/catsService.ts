@@ -12,8 +12,7 @@ export const catApi = createApi({
   }),
   endpoints: builder => ({
     getCatsByPage: builder.query<Cat, number>({
-      query: page =>
-        `search?limit=20&page=${page}&order=DESC`,
+      query: (page = 0) => `search?limit=20&page=${page}&order=DESC`,
     }),
   }),
 });

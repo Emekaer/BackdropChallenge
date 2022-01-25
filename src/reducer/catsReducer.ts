@@ -21,9 +21,10 @@ export const catSlice = createSlice({
       const catId = action.payload.id;
 
       if (state.favourites.findIndex((cat: Cat) => cat.id === catId) > -1) {
-        state.favourites = state.favourites.filter(
+        const updatedArray = state.favourites.filter(
           (cat: Cat) => cat.id !== catId,
         );
+        state.favourites = updatedArray;
       } else {
         state.favourites = [
           ...state.favourites,
@@ -32,9 +33,9 @@ export const catSlice = createSlice({
       }
     },
     removeFavourite: (state, action: PayloadAction<string>) => {
-      state.favourites = state.favourites.filter(
-        (cat: Cat) => cat.id !== action.payload,
-      );
+      const id = action.payload;
+      const updatedArray = state.favourites.filter((cat: Cat) => cat.id !== id);
+      state.favourites = updatedArray;
     },
   },
 });
