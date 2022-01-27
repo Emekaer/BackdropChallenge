@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Cat} from 'utils/types';
+import {Cat} from 'types/types';
 import type {RootState} from './store';
 
 type CatState = {
@@ -7,7 +7,6 @@ type CatState = {
   favourites: Cat[] | any;
 };
 
-// Define the initial state using that type
 const initialState: CatState = {
   cats: [],
   favourites: [],
@@ -17,14 +16,16 @@ export const catSlice = createSlice({
   name: 'cat',
   initialState,
   reducers: {
+    addCats: (state, action: PayloadAction<Cat[] | undefined>) => {
+      action.payload && state.cats.push(...action.payload);
+    },
     addFavourite: (state, action: PayloadAction<Cat>) => {
       const catId = action.payload.id;
 
       if (state.favourites.findIndex((cat: Cat) => cat.id === catId) > -1) {
-        const updatedArray = state.favourites.filter(
+        state.favourites = state.favourites.filter(
           (cat: Cat) => cat.id !== catId,
         );
-        state.favourites = updatedArray;
       } else {
         state.favourites = [
           ...state.favourites,
@@ -34,13 +35,12 @@ export const catSlice = createSlice({
     },
     removeFavourite: (state, action: PayloadAction<string>) => {
       const id = action.payload;
-      const updatedArray = state.favourites.filter((cat: Cat) => cat.id !== id);
-      state.favourites = updatedArray;
+      state.favourites = state.favourites.filter((cat: Cat) => cat.id !== id);
     },
   },
 });
 
-export const {addFavourite, removeFavourite} = catSlice.actions;
+export const {addFavourite, removeFavourite, addCats} = catSlice.actions;
 
 export const favourites = (state: RootState) => state.cats.favourites;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SvgCss } from 'react-native-svg';
 
-import { SVGComponent } from "utils/types"
+import { SVGComponent } from "types/types"
 
 export default ({ fill, width, height, outline = fill }: SVGComponent) => {
     const xml = `

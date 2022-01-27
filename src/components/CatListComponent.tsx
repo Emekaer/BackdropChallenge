@@ -12,12 +12,13 @@ type CatListComponentProps = {
     url: string;
     id: string;
     colorFill: string;
+    name: number;
     addFavouriteCat: (id: string, url: string) => void
 }
 
-const CatListComponent = React.memo<CatListComponentProps>(({ url, id, colorFill, addFavouriteCat }) => {
+const CatListComponent = React.memo<CatListComponentProps>(({ url, id, colorFill, addFavouriteCat, name }) => {
 
-    console.log("render", id, new Date().toString(), "home", colorFill)
+    console.log("render", name, new Date().toString(), "home", colorFill)
     return (
         <View style={styles.rowContainer}>
             <View style={styles.imageAndName}>
@@ -29,7 +30,7 @@ const CatListComponent = React.memo<CatListComponentProps>(({ url, id, colorFill
                     }}
                     resizeMode={FastImage.resizeMode.cover}
                 />
-                <Text style={styles.name}>{id}</Text>
+                <Text style={styles.name}>{name}</Text>
             </View>
             <Pressable onPress={() => addFavouriteCat(url, id)}>
                 <HeartIcon fill={colorFill} width={16} height={13} outline={colors.grey} />

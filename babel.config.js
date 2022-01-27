@@ -22,6 +22,7 @@ module.exports = {
           components: './src/components',
           reducer: './src/reducer',
           services: './src/services',
+          types: './src/types',
         },
       },
     ],

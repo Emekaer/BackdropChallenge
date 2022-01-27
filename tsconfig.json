@@ -5,11 +5,12 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
-    "lib": ["es2017"],
+    "lib": ["es2017", "dom.Iterable"],
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
     "target": "esnext",
+    "typeRoots": ["./src/types"],
     "paths": {
       "screens/*": ["./src/screens/*"],
       "navigation/*": ["./src/navigation/*"],
@@ -17,7 +18,8 @@
       "assets/*": ["./src/assets/*"],
       "utils/*": ["./src/utils/*"],
       "reducer/*": ["./src/reducer/*"],
-      "services/*": ["./src/services/*"]
+      "services/*": ["./src/services/*"],
+      "types/*": ["./src/types/*"]
     }
   },
   "exclude": [
