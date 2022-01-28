@@ -18,7 +18,6 @@ type CatListComponentProps = {
 
 const CatListComponent = React.memo<CatListComponentProps>(({ url, id, colorFill, addFavouriteCat, name }) => {
 
-    console.log("render", name, new Date().toString(), "home", colorFill)
     return (
         <View style={styles.rowContainer}>
             <View style={styles.imageAndName}>

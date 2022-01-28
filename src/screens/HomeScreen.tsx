@@ -17,7 +17,7 @@ const Home = () => {
     const [page, setPage] = useState(0)
 
     const dispatch = useAppDispatch();
-    const { data, currentData, error, isLoading, refetch, isFetching } = useGetCatsByPageQuery(page)
+    const { data, error, isLoading, refetch, isFetching } = useGetCatsByPageQuery(page)
 
     const cats = useAppSelector(state => state.cats.cats)
 
@@ -52,7 +52,6 @@ const Home = () => {
         index
     }), [])
 
-    // console.log(isFetching, "isFetching", isLoading, "isloading", "home")
     return (
         <ScreenContainer error={error} loading={isLoading || !cats} refetch={refetch}>
             {!!cats && <FlatList

@@ -1,17 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-
-import Home from 'screens/HomeScreen';
-import {cleanup} from '@testing-library/react-native/pure';
-
-import {NavigationContainer} from '@react-navigation/native';
-import {Provider} from 'react-redux';
-
-import {store} from 'reducer/store';
 import fetchMock from 'jest-fetch-mock';
 import {setupApiStore} from '../testUtils';
-import {catApi, useGetCatsByPageQuery} from 'services/catsService';
-import {BASE_URL, CATS_API_KEY} from 'react-native-dotenv';
+import {catApi} from 'services/catsService';
 import catsReducer from 'reducer/catsReducer';
 
 beforeEach(() => {
