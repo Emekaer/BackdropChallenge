@@ -16,6 +16,9 @@ export const catSlice = createSlice({
   name: 'cat',
   initialState,
   reducers: {
+    reset: (state, action) => {
+      return initialState;
+    },
     addCats: (state, action: PayloadAction<Cat[] | undefined>) => {
       action.payload && state.cats.push(...action.payload);
     },
@@ -40,7 +43,7 @@ export const catSlice = createSlice({
   },
 });
 
-export const {addFavourite, removeFavourite, addCats} = catSlice.actions;
+export const {addFavourite, removeFavourite, addCats, reset} = catSlice.actions;
 
 export const favourites = (state: RootState) => state.cats.favourites;
 

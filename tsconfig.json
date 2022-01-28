@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -10,7 +11,7 @@
     "noEmit": true,
     "strict": true,
     "target": "esnext",
-    "typeRoots": ["./src/types"],
+    "typeRoots": ["./src/types,node_modules/@types"],
     "paths": {
       "screens/*": ["./src/screens/*"],
       "navigation/*": ["./src/navigation/*"],

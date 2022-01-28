@@ -3,7 +3,6 @@ import {Cat} from 'types/types';
 
 import {BASE_URL, CATS_API_KEY} from 'react-native-dotenv';
 
-console.log(BASE_URL, CATS_API_KEY, 'environmet');
 export const catApi = createApi({
   reducerPath: 'catApi',
   baseQuery: fetchBaseQuery({
